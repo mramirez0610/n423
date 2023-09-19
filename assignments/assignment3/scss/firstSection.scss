@@ -1,0 +1,54 @@
+.first{
+    height: fit-content;
+    .inputArea{
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10vw;
+        
+        .personal{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+    
+            input{
+                width: 10vw;
+            }
+        }
+    
+        .classList{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            input{
+                width: 10vw;
+            }
+        }
+    }
+    
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    @media (max-width: 956px) {
+        .inputArea{
+            .personal{
+                input{
+                    width: 20vw;
+                }
+            }
+    
+            .classList{
+                input{
+                    width: 20vw;
+                }
+            }
+        }
+    }
+}

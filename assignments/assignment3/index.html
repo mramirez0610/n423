@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 3</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <span>Add Students</span>
+      </nav>
+    </header>
+    <main>
+      <section class="first">
+        <h1>Add A Student</h1>
+        <div class="inputArea">
+          <div class="personal">
+            <label for="fName">First name</label>
+            <input type="text" id="firstName" />
+            <label for="lName">Last Name</label>
+            <input type="text" id="lastName" />
+            <label for="age">Age</label>
+            <input type="number" id="age" />
+            <label for="email">Email</label>
+            <input type="text" id="email" />
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" />
+          </div>
+          <div class="classList">
+            <label for="class1">Class 1:</label>
+            <input type="text" id="class1" />
+            <label for="class2">Class 2:</label>
+            <input type="text" id="class2" />
+            <label for="class3">Class 3:</label>
+            <input type="text" id="class3" />
+            <label for="class4">Class 4:</label>
+            <input type="text" id="class4" />
+            <label for="class5">Class 5:</label>
+            <input type="text" id="class5" />
+          </div>
+        </div>
+
+        <div class="buttons">
+          <input type="submit" id="submit" value="Add Student" />
+          <button id="getName">Get All Students</button>
+        </div>
+      </section>
+
+      <section class="second">
+        <div id="app"></div>
+      </section>
+    </main>
+
+    <script type="module" src="lib/jquery-3.7.1.min.js"></script>
+    <script type="module" src="app/app.js"></script>
+  </body>
+</html>
