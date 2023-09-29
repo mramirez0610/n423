@@ -12,6 +12,8 @@ import {
   collection,
   addDoc,
   getDocs,
+  where,
+  query,
   doc,
 } from "firebase/firestore";
 
@@ -33,11 +35,13 @@ var logInButton = document.getElementById("login");
 var logOutButton = document.getElementById("logout");
 var addUserButton = document.getElementById("addUser");
 let getAllDataButton = document.getElementById("getAllData");
+let getQueryButton = document.getElementById("getQueryButton");
 
 logInButton.addEventListener("click", login);
 logOutButton.addEventListener("click", logout);
 addUserButton.addEventListener("click", addUserToDB);
 getAllDataButton.addEventListener("click", getAllData);
+getQueryButton.addEventListener("click", getQuery);
 
 onAuthStateChanged(auth, (user) => {
   if (user != null) {
@@ -115,6 +119,29 @@ async function getAllData() {
   });
 
   addUserEditBtnListener();
+}
+
+async function getQuery() {
+
+  let searchName = $("#query-input").val();
+
+    const q = query(
+      collection(db, "Pirates"),
+      where("firstName", "==", searchName)
+    );
+
+  try {
+    const querySnapshot = await getDocs(q);
+    if (querySnapshot.docs.length > 0) {
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id, " => ", doc.data());
+      });
+    } else {
+      console.log("no data!");
+    }
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function login() {
