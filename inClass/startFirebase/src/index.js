@@ -122,13 +122,12 @@ async function getAllData() {
 }
 
 async function getQuery() {
-
   let searchName = $("#query-input").val();
 
-    const q = query(
-      collection(db, "Pirates"),
-      where("firstName", "==", searchName)
-    );
+  const q = query(
+    collection(db, "Pirates"),
+    where("firstName", "==", searchName)
+  );
 
   try {
     const querySnapshot = await getDocs(q);
